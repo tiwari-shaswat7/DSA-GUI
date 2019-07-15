@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include "stack.hpp"
 
 template <class T>
@@ -46,7 +45,7 @@ template <class T>
 void Stack<T>::display(sf::RenderWindow &window)
 {
 	sf::RectangleShape table;
-	table.setSize(sf::Vector2f(WINDOW_WIDTH / 3, 3 * WINDOW_HEIGHT / 4));
+	table.setSize(sf::Vector2f(BOX_WIDTH, BOX_HEIGHT * MAX));
 	table.setPosition((WINDOW_WIDTH / 2) - (table.getGlobalBounds().width / 2), 
 					  (WINDOW_HEIGHT / 2) - (table.getGlobalBounds().height / 2));
 	table.setFillColor(sf::Color::Black);
@@ -59,17 +58,16 @@ void Stack<T>::display(sf::RenderWindow &window)
 		throw FontNotLoaded();
 	}
 
-	float dataSpriteHeight = table.getGlobalBounds().height / MAX ;
 	float dataSpritePositionX = table.getGlobalBounds().left;
 	float dataSpritePositionY = table.getGlobalBounds().top + table.getGlobalBounds().height;
 	for (int i = top; i >= 0; i--)
 	{
 		// for each rectangular sprite box
-		m_dataSprite[i].setSize(sf::Vector2f(table.getGlobalBounds().width, dataSpriteHeight));
-		dataSpritePositionY -= m_dataSprite[i].getGlobalBounds().height;
+		m_dataSprite[i].setSize(sf::Vector2f(BOX_WIDTH, BOX_HEIGHT));
+		dataSpritePositionY -= BOX_HEIGHT;
 		m_dataSprite[i].setPosition(dataSpritePositionX, dataSpritePositionY);
 		m_dataSprite[i].setFillColor(sf::Color::Yellow);
-		m_dataSprite[i].setOutlineThickness(-0.1f * m_dataSprite[i].getGlobalBounds().height);
+		m_dataSprite[i].setOutlineThickness(-0.1f * BOX_HEIGHT);
 		m_dataSprite[i].setOutlineColor(sf::Color::Black);
 
 		// for text in each sprite box
@@ -79,5 +77,4 @@ void Stack<T>::display(sf::RenderWindow &window)
 		window.draw(m_dataSprite[i]);
 
 	}
-
 }
