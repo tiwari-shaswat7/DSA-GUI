@@ -1,5 +1,5 @@
 #include <iostream>
-#include <SFML/Graphics.hpp>
+#include <SFML\Graphics.hpp>
 
 
 int main()
@@ -7,6 +7,12 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML Works!");
 	sf::CircleShape circle(100.f);
 	circle.setFillColor(sf::Color::Green);
+
+	sf::Font font;
+	if (!font.loadFromFile("fonts/arial.ttf"))
+	{
+		std::cout << "Couldnot Load Font" << std::endl;
+	}
 
 	while (window.isOpen())
 	{
