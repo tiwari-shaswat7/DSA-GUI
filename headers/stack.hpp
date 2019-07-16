@@ -5,7 +5,7 @@
 
 #include "defines.hpp"
 
-#define MAX 4
+#define MAX 5
 
 class Overflow { };
 class Underflow { };

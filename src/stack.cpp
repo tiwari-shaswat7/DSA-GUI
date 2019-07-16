@@ -60,7 +60,7 @@ void Stack<T>::display(sf::RenderWindow &window)
 
 	float dataSpritePositionX = table.getGlobalBounds().left;
 	float dataSpritePositionY = table.getGlobalBounds().top + table.getGlobalBounds().height;
-	for (int i = top; i >= 0; i--)
+	for (int i = 0; i <= top; i++)
 	{
 		// for each rectangular sprite box
 		m_dataSprite[i].setSize(sf::Vector2f(BOX_WIDTH, BOX_HEIGHT));
@@ -72,9 +72,14 @@ void Stack<T>::display(sf::RenderWindow &window)
 
 		// for text in each sprite box
 		m_dataText[i].setFont(font);
-		//m_dataText[i].setCharacterSize()
+		m_dataText[i].setString(std::to_string(m_data[i]));
+		m_dataText[i].setCharacterSize(25);
+		m_dataText[i].setFillColor(sf::Color::Black);
+		m_dataText[i].setPosition(sf::Vector2f(dataSpritePositionX + (BOX_WIDTH / 2 - m_dataText[i].getGlobalBounds().width / 2),
+			dataSpritePositionY + (BOX_HEIGHT / 2 - m_dataText[i].getGlobalBounds().height / 2)));
 
 		window.draw(m_dataSprite[i]);
+		window.draw(m_dataText[i]);
 
 	}
 }
