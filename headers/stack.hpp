@@ -1,31 +1,35 @@
 #pragma once
 
 #include <string>
+#include <typeinfo>
 #include <SFML\Graphics.hpp>
 
 #include "defines.hpp"
+#include "utilities.hpp"
 
 #define MAX 5
 
 class Overflow { };
 class Underflow { };
 class FontNotLoaded { };
+class TextureNotFound { };
 
 template <class T>
 class Stack
 {
 private:
 	T m_data[MAX];
-	sf::RectangleShape m_dataSprite[MAX];
-	sf::Text m_dataText[MAX];
 	int top;
 
+	sf::RectangleShape m_dataSprite[MAX];
+	sf::Text m_dataText[MAX];
+
 public:
-	Stack() : top(-1) {}
+	Stack();
 
 	void push(T inData);
 	T pop();
 	T peek();
 
-	void display(sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window, bool overflow = false, bool underflow = false);
 };

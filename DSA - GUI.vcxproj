@@ -137,15 +137,28 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\stack.cpp" />
+    <ClCompile Include="src\textbox.cpp" />
+    <ClCompile Include="src\utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\defines.hpp" />
     <ClInclude Include="headers\main.hpp" />
     <ClInclude Include="headers\stack.hpp" />
+    <ClInclude Include="headers\textbox.hpp" />
+    <ClInclude Include="headers\utilities.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="fonts\arial.ttf" />
     <Font Include="fonts\Liberator-Heavy.otf" />
+    <Font Include="fonts\OpenSans-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\button-pop-active.png" />
+    <Image Include="img\button-pop-inactive.png" />
+    <Image Include="img\button-push-active.png" />
+    <Image Include="img\button-push-inactive.png" />
+    <Image Include="img\button-quit-inactive.png" />
+    <Image Include="img\textbox.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

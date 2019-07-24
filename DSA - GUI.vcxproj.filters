@@ -21,6 +21,12 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\textbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\stack.hpp">
@@ -32,9 +38,36 @@
     <ClInclude Include="headers\defines.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\utilities.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\textbox.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="fonts\arial.ttf" />
     <Font Include="fonts\Liberator-Heavy.otf" />
+    <Font Include="fonts\OpenSans-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\button-quit-inactive.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\button-push-inactive.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\button-push-active.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\button-pop-inactive.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\button-pop-active.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\textbox.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

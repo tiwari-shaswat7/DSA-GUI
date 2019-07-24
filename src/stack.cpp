@@ -1,10 +1,20 @@
-#pragma once
-
 #include "stack.hpp"
+
+template <class T>
+Stack<T>::Stack() : top(-1)
+{
+	
+}
 
 template <class T>
 void Stack<T>::push(T inData)
 {
+	/*if (typeid(std::string) == typeid(inData))
+	{
+		if(std::string(inData == "")
+			return;
+	}*/
+
 	if (top == MAX - 1)
 	{
 		throw Overflow();
@@ -42,7 +52,7 @@ T Stack<T>::peek()
 }
 
 template <class T>
-void Stack<T>::display(sf::RenderWindow &window)
+void Stack<T>::draw(sf::RenderWindow &window, bool overflow, bool underflow)
 {
 	sf::RectangleShape table;
 	table.setSize(sf::Vector2f(BOX_WIDTH, BOX_HEIGHT * MAX));
@@ -72,7 +82,7 @@ void Stack<T>::display(sf::RenderWindow &window)
 
 		// for text in each sprite box
 		m_dataText[i].setFont(font);
-		m_dataText[i].setString(std::to_string(m_data[i]));
+		m_dataText[i].setString(to_string(m_data[i]));
 		m_dataText[i].setCharacterSize(25);
 		m_dataText[i].setFillColor(sf::Color::Black);
 		m_dataText[i].setPosition(sf::Vector2f(dataSpritePositionX + (BOX_WIDTH / 2 - m_dataText[i].getGlobalBounds().width / 2),
@@ -80,6 +90,33 @@ void Stack<T>::display(sf::RenderWindow &window)
 
 		window.draw(m_dataSprite[i]);
 		window.draw(m_dataText[i]);
+	}
 
+	
+
+	if (overflow)
+	{
+		sf::Text textOverflow;
+		textOverflow.setFont(font);
+		textOverflow.setString("OVERFLOW!");
+		textOverflow.setFillColor(sf::Color(COLOR_DANGER_RED));
+		textOverflow.setPosition(sf::Vector2f(dataSpritePositionX + (BOX_WIDTH / 2 - textOverflow.getGlobalBounds().width / 2),
+			table.getGlobalBounds().top - BOX_HEIGHT));
+
+		window.draw(textOverflow);
+		return;
+	}
+	if (underflow)
+	{
+		sf::Text textUnderflow;
+		textUnderflow.setFont(font);
+		textUnderflow.setString("UNDERFLOW!");
+		textUnderflow.setFillColor(sf::Color(COLOR_DANGER_RED));
+		dataSpritePositionY -= BOX_HEIGHT;
+		textUnderflow.setPosition(sf::Vector2f(dataSpritePositionX + (BOX_WIDTH / 2 - textUnderflow.getGlobalBounds().width / 2),
+			table.getGlobalBounds().top + table.getGlobalBounds().height));
+
+		window.draw(textUnderflow);
+		return;
 	}
 }
