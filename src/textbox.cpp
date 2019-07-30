@@ -46,8 +46,11 @@ std::string getInput(sf::RenderWindow& window, int positionX, int positionY, Sta
 			case sf::Event::TextEntered:
 				if (event.text.unicode == 8)
 				{
-					input.pop_back();
-					displayInput.setString(input);
+					if (input != "")
+					{
+						input.pop_back();
+						displayInput.setString(input);
+					}
 				}
 				else if (event.text.unicode < 128)
 				{

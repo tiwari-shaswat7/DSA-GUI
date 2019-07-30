@@ -90,7 +90,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\tiwar\Documents\Projects\Self\DSA - GUI\fonts;C:\Users\tiwar\Documents\Projects\Self\DSA - GUI\headers;C:\Users\tiwar\Documents\Projects\Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\tiwar\Documents\Projects\1. Self\DSA - GUI\fonts;C:\Users\tiwar\Documents\Projects\1. Self\DSA - GUI\headers;C:\Users\tiwar\Documents\Projects\Libraries\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,7 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\main-warshall.cpp" />
     <ClCompile Include="src\stack.cpp" />
     <ClCompile Include="src\textbox.cpp" />
     <ClCompile Include="src\utilities.cpp" />

@@ -88,7 +88,7 @@ int main()
 						buttons[0].setTexture(buttonPush[1]);
 						window.draw(buttons[0]);
 						window.display();
-						sf::sleep(sf::milliseconds(500));
+						sf::sleep(sf::milliseconds(200));
 						std::string temp = getInput(window, buttons[0].getPosition().x, buttons[0].getPosition().y, myStr);
 						if(temp != "")
 							myStr.push(temp);
