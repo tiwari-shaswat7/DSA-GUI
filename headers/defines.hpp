@@ -11,3 +11,13 @@
 #define NUMBER_OF_BUTTONS 3
 
 #define FONT_STACK "Liberator-Heavy.otf"
+
+// Floyd-Warshall's Algorithm
+#define INF 9999
+#define PI 3.14159265
+
+// GUI Defs
+#define NODE_RADIUS 30
+#define PATH_WIDTH 10
+#define PATH_LENGTH	40
+#define ARROW_RADIUS 15

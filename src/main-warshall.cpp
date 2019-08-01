@@ -1,4 +1,6 @@
-#include <iostream>
+#pragma once 
+
+#include "main-warshall.hpp"
 
 void displayMat(int** mat, int n)
 {
@@ -15,6 +17,8 @@ void displayMat(int** mat, int n)
 
 int main()
 {
+	drawWarshall();
+
 	int n;
 	std::cout << "Number of nodes: ";
 	std::cin >> n;

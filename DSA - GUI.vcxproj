@@ -136,19 +136,28 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main-warshall.cpp" />
+    <ClCompile Include="src\shapes.cpp" />
     <ClCompile Include="src\stack.cpp" />
     <ClCompile Include="src\textbox.cpp" />
     <ClCompile Include="src\utilities.cpp" />
+    <ClCompile Include="src\warshall-gui.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\defines.hpp" />
+    <ClInclude Include="headers\main-warshall.hpp" />
     <ClInclude Include="headers\main.hpp" />
+    <ClInclude Include="headers\shapes.hpp" />
     <ClInclude Include="headers\stack.hpp" />
     <ClInclude Include="headers\textbox.hpp" />
     <ClInclude Include="headers\utilities.hpp" />
+    <ClInclude Include="headers\warshall-gui.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="fonts\arial.ttf" />
+    <Font Include="fonts\CNFREEBD.ttf" />
+    <Font Include="fonts\CNFREE__.ttf" />
+    <Font Include="fonts\Crasns.ttf" />
+    <Font Include="fonts\JerseyM54.ttf" />
     <Font Include="fonts\Liberator-Heavy.otf" />
     <Font Include="fonts\OpenSans-Regular.ttf" />
   </ItemGroup>

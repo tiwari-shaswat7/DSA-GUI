@@ -27,6 +27,12 @@
     <ClCompile Include="src\main-warshall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\warshall-gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shapes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\stack.hpp">
@@ -44,11 +50,24 @@
     <ClInclude Include="headers\textbox.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\warshall-gui.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\main-warshall.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\shapes.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="fonts\arial.ttf" />
     <Font Include="fonts\Liberator-Heavy.otf" />
     <Font Include="fonts\OpenSans-Regular.ttf" />
+    <Font Include="fonts\Crasns.ttf" />
+    <Font Include="fonts\JerseyM54.ttf" />
+    <Font Include="fonts\CNFREEBD.ttf" />
+    <Font Include="fonts\CNFREE__.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\button-quit-inactive.png">
