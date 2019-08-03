@@ -36,6 +36,8 @@ struct Warshall
 	void newNode(sf::Event inEvent);
 	int selectNode();
 
+	bool isBiDirectional(int index1, int index2);
+
 	void handleEvent();
 	void draw();
 };

@@ -36,6 +36,11 @@ void Warshall::calculate()
 		for (int j = 0; j < n; j++)
 		{
 			m_paths[i][j].setPath(m_nodes[i], m_nodes[j], m_mat[i][j], false);
+			if (!m_paths[i][j].m_biDirectional && isBiDirectional(i, j))
+			{
+				m_paths[i][j].makeBiDirectional();
+				m_paths[j][i].makeBiDirectional();
+			}
 		}
 	}
 }
@@ -115,6 +120,18 @@ int Warshall::selectNode()
 	return -1;
 }
 
+bool Warshall::isBiDirectional(int index1, int index2)
+{
+	if (index1 == index2)
+		return false;
+
+	if (m_mat[index1][index2] < INF && m_mat[index2][index1] < INF)
+	{
+		return true;
+	}
+	return false;
+}
+
 void Warshall::handleEvent()
 {
 	while (m_window->isOpen())
@@ -146,7 +163,13 @@ void Warshall::handleEvent()
 						selectNode2 = selectNode();
 						m_mat[selectNode1][selectNode2] = inputWeight;
 						m_paths[selectNode1][selectNode2].setPath(m_nodes[selectNode1],
-							m_nodes[selectNode2], inputWeight);
+							m_nodes[selectNode2], inputWeight, true);
+						if (!m_paths[selectNode1][selectNode2].m_biDirectional && isBiDirectional(selectNode1, selectNode2))
+						{
+							m_paths[selectNode1][selectNode2].makeBiDirectional();
+							m_paths[selectNode2][selectNode1].makeBiDirectional();
+						}
+
 						break;
 
 					case 2:		// Calculate

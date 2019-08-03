@@ -44,10 +44,16 @@ struct Path
 	ArrowShape m_arrow;
 	sf::Text m_text;
 
+	float m_angleRotationRad;
+	sf::Vector2f m_prevPosition;
+	bool m_biDirectional = false;
+
 	Path(Node node1, Node node2, sf::Font &font,int weight = INF);
 
 	void setPath(Node node1, Node node2, int weight = INF, bool outline = true);
 	void setPathWeight(int weight = INF);
+
+	void makeBiDirectional();
 
 	void draw(sf::RenderWindow& window);
 };

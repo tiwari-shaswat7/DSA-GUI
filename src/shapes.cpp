@@ -67,10 +67,13 @@ void Path::setPath(Node node1, Node node2, int weight, bool outline)
 	float cy2 = node2.circle.getGlobalBounds().top + node2.circle.getGlobalBounds().width / 2;
 	float length = sqrtf(powf(cx2 - cx1, 2) + powf(cy2 - cy1, 2)) - (node2.circle.getGlobalBounds().width / 2);
 	m_arrow.setLength(length + offsetOutline);
-	m_arrow.setPosition(cx1, cy1);
 
-	float angle = 180 / PI * (atan2(cy2 - cy1, cx2 - cx1));
+	float angleRad = atan2(cy2 - cy1, cx2 - cx1);
+	m_angleRotationRad = angleRad;
+	float angle = 180 / PI * angleRad;
 	m_arrow.setRotation(angle);
+
+	m_arrow.setPosition(cx1, cy1);
 
 	m_text.setString(std::to_string(weight));
 	m_text.setCharacterSize(18);
@@ -83,6 +86,17 @@ void Path::setPath(Node node1, Node node2, int weight, bool outline)
 		m_text.setScale(-1, -1);
 	else
 		m_text.setScale(1, 1);
+
+	m_prevPosition = m_arrow.getPosition();
+
+	if (m_biDirectional)
+	{
+		float centerOffset = NODE_RADIUS + 10;	// ARROWHEAD = 10
+		m_arrow.setLength(m_arrow.getLength() - centerOffset);
+		m_arrow.setPosition(m_arrow.getPosition().x + centerOffset * cos(m_angleRotationRad),
+			m_arrow.getPosition().y + centerOffset * sin(m_angleRotationRad));
+	}
+
 }
 
 void Path::setPathWeight(int weight)
@@ -90,13 +104,22 @@ void Path::setPathWeight(int weight)
 	m_text.setString(std::to_string(weight));
 }
 
+void Path::makeBiDirectional()
+{
+	float centerOffset = NODE_RADIUS + 10;	// ARROWHEAD = 10
+	m_arrow.setLength(m_arrow.getLength() - centerOffset);
+	m_arrow.setPosition(m_arrow.getPosition().x + centerOffset * cos(m_angleRotationRad),
+		m_arrow.getPosition().y + centerOffset * sin(m_angleRotationRad));
+	m_biDirectional = true;
+}
+
 void Path::draw(sf::RenderWindow& window)
 {
 	window.draw(m_arrow);
 
-	sf::Transform transform;
-	transform.rotate(m_arrow.getRotation(), m_arrow.getPosition());
-	window.draw(m_text, transform);
+	sf::Transform m_transform;
+	m_transform.rotate(m_arrow.getRotation(), m_prevPosition);
+	window.draw(m_text, m_transform);
 }
 
 ArrowShape::ArrowShape(float length) :
