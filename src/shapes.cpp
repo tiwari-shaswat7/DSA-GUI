@@ -53,14 +53,20 @@ Path::Path(Node node1, Node node2, sf::Font& font, int weight) : m_arrow(100.f)
 	m_text.setFont(font);
 }
 
-void Path::setPath(Node node1, Node node2, int weight)
+void Path::setPath(Node node1, Node node2, int weight, bool outline)
 {
+	int offsetOutline = 5;
+	if (!outline)
+	{
+		offsetOutline = 0;
+	}
+
 	float cx1 = node1.circle.getGlobalBounds().left + node1.circle.getGlobalBounds().width / 2;
 	float cy1 = node1.circle.getGlobalBounds().top + node1.circle.getGlobalBounds().width / 2;
 	float cx2 = node2.circle.getGlobalBounds().left + node2.circle.getGlobalBounds().width / 2;
 	float cy2 = node2.circle.getGlobalBounds().top + node2.circle.getGlobalBounds().width / 2;
 	float length = sqrtf(powf(cx2 - cx1, 2) + powf(cy2 - cy1, 2)) - (node2.circle.getGlobalBounds().width / 2);
-	m_arrow.setLength(length);
+	m_arrow.setLength(length + offsetOutline);
 	m_arrow.setPosition(cx1, cy1);
 
 	float angle = 180 / PI * (atan2(cy2 - cy1, cx2 - cx1));
@@ -72,8 +78,16 @@ void Path::setPath(Node node1, Node node2, int weight)
 	m_text.setOrigin(0, m_text.getCharacterSize() / 2 + 2);
 	m_text.setPosition(cx1 + node1.circle.getGlobalBounds().width, cy1);
 
-	if (angle < 0)
+	std::cout << angle << std::endl;
+	if (angle < -90 || angle >= 90)
 		m_text.setScale(-1, -1);
+	else
+		m_text.setScale(1, 1);
+}
+
+void Path::setPathWeight(int weight)
+{
+	m_text.setString(std::to_string(weight));
 }
 
 void Path::draw(sf::RenderWindow& window)

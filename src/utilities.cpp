@@ -27,6 +27,14 @@ bool isRectClicked(sf::RectangleShape object, int mouseX, int mouseY)
 	return tempRect.contains(sf::Vector2i(mouseX, mouseY));
 }
 
+bool isCircleClicked(sf::CircleShape object, int mouseX, int mouseY)
+{
+	sf::IntRect tempRect(object.getPosition().x, object.getPosition().y,
+		object.getGlobalBounds().width, object.getGlobalBounds().height);
+
+	return tempRect.contains(sf::Vector2i(mouseX, mouseY));
+}
+
 bool isSpriteHovered(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow& window)
 {
 

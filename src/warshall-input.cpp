@@ -65,7 +65,7 @@ int Input::getInput(sf::RenderWindow& window, Warshall &warshall)
 	textbox.setSize(sf::Vector2f(BUTTON_WIDTH, BUTTON_HEIGHT));
 
 	sf::Font font;
-	font.loadFromFile("fonts/OpenSans-Regular.ttf");
+	font.loadFromFile("fonts/Liberator-Heavy.otf");
 	sf::Text displayInput;
 	displayInput.setFont(font);
 	displayInput.setCharacterSize(20);
@@ -112,6 +112,8 @@ int Input::getInput(sf::RenderWindow& window, Warshall &warshall)
 		window.clear(sf::Color::Black);
 		warshall.draw();
 		window.draw(textbox);
+		displayInput.setPosition((BUTTON_WIDTH - displayInput.getGlobalBounds().width) / 2,
+			(BUTTON_HEIGHT - displayInput.getCharacterSize()) / 2);
 		window.draw(displayInput);
 		window.display();
 	}

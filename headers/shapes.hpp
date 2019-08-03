@@ -46,7 +46,8 @@ struct Path
 
 	Path(Node node1, Node node2, sf::Font &font,int weight = INF);
 
-	void setPath(Node node1, Node node2, int weight = INF);
+	void setPath(Node node1, Node node2, int weight = INF, bool outline = true);
+	void setPathWeight(int weight = INF);
 
 	void draw(sf::RenderWindow& window);
 };

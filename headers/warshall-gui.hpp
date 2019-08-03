@@ -22,14 +22,19 @@ struct Warshall
 	std::string commands[BUTTONS] = { "ADD NODE", "CONNECT", "CALCULATE" };
 	Input menu = Input(commands);
 	int prevCommand = -1;
+	int selectNode1 = -1;
+	int inputWeight = INF;
+	int selectNode2 = -1;
+
 
 	Warshall(sf::Font &font, sf::RenderWindow *window);
 
 	//std::vector<std::vector<int>> &getMatrix();
 	//void setMatrix(std::vector<std::vector<int>> &mat);
 
-	void Calculate();
+	void calculate();
 	void newNode(sf::Event inEvent);
+	int selectNode();
 
 	void handleEvent();
 	void draw();

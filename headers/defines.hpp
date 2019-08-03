@@ -13,7 +13,7 @@
 #define FONT_STACK "Liberator-Heavy.otf"
 
 // Floyd-Warshall's Algorithm
-#define INF 9999
+#define INF 999999999
 #define PI 3.14159265
 
 // GUI Defs
