@@ -17,6 +17,9 @@
 #define PI 3.14159265
 
 // GUI Defs
+#define BUTTONS 3
+#define BUTTON_HEIGHT 40
+#define BUTTON_WIDTH 165
 #define NODE_RADIUS 30
 #define PATH_WIDTH 10
 #define PATH_LENGTH	40

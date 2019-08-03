@@ -33,6 +33,9 @@
     <ClCompile Include="src\shapes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\warshall-input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\stack.hpp">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\shapes.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="headers\warshall-input.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

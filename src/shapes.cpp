@@ -3,6 +3,7 @@
 Node::Node(sf::Font& font, int posX, int posY, int index)
 {
 	circle.setRadius(NODE_RADIUS);
+	circle.setOrigin(NODE_RADIUS / 2, NODE_RADIUS / 2);
 	circle.setFillColor(sf::Color::Yellow);
 	circle.setPosition(posX, posY);
 	circle.setOutlineColor(sf::Color::White);
@@ -18,6 +19,13 @@ Node::Node(sf::Font& font, int posX, int posY, int index)
 	indexText.setPosition(circle.getGlobalBounds().left + NODE_RADIUS - indexText.getGlobalBounds().width / 2,
 		circle.getGlobalBounds().top + NODE_RADIUS - indexText.getCharacterSize() / 2 - 5);
 	indexText.setFillColor(sf::Color::Black);
+}
+
+void Node::move(int posX, int posY)
+{
+	circle.setPosition(posX, posY);
+	indexText.setPosition(circle.getGlobalBounds().left + NODE_RADIUS - indexText.getGlobalBounds().width / 2,
+		circle.getGlobalBounds().top + NODE_RADIUS - indexText.getCharacterSize() / 2 - 5);
 }
 
 void Node::draw(sf::RenderWindow& window)

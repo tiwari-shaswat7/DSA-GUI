@@ -35,6 +35,7 @@ struct Node
 
 	Node(sf::Font& font, int posX, int posY, int index = 0);
 
+	void move(int posX, int posY);
 	void draw(sf::RenderWindow& window);
 };
 

@@ -141,6 +141,7 @@
     <ClCompile Include="src\textbox.cpp" />
     <ClCompile Include="src\utilities.cpp" />
     <ClCompile Include="src\warshall-gui.cpp" />
+    <ClCompile Include="src\warshall-input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\defines.hpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="headers\textbox.hpp" />
     <ClInclude Include="headers\utilities.hpp" />
     <ClInclude Include="headers\warshall-gui.hpp" />
+    <ClInclude Include="headers\warshall-input.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="fonts\arial.ttf" />

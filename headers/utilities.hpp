@@ -11,6 +11,7 @@ std::string to_string(T value);
 
 bool isSpriteClicked(sf::Sprite object, int mouseX, int mouseY);
 bool isSpriteHovered(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow& window);
+bool isRectClicked(sf::RectangleShape object, int mouseX, int mouseY);
 
 
 
