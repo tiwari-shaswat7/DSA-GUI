@@ -15,7 +15,9 @@ Button::Button()
 
 void Button::setString(std::string str)
 {
-	static sf::Vector2f pos = sf::Vector2f(0, 0);
+	static sf::Vector2f pos = sf::Vector2f(0, 0);	// box position
+	static int count = 0;
+
 	rect.setPosition(pos);
 
 	text.setString(str);
@@ -24,7 +26,13 @@ void Button::setString(std::string str)
 		pos.y + (rect.getGlobalBounds().height - text.getCharacterSize()) / 2);
 	/*text.setPosition(pos);*/
 	
+	count++;
 	pos.y += BUTTON_HEIGHT;
+	if (count == 3)
+	{
+		count = 0;
+		pos.y = 0;
+	}
 }
 
 Input::Input(std::string str[BUTTONS])

@@ -135,7 +135,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\main-stack.cpp" />
     <ClCompile Include="src\main-warshall.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\shapes.cpp" />
     <ClCompile Include="src\stack.cpp" />
     <ClCompile Include="src\textbox.cpp" />
@@ -146,7 +148,7 @@
   <ItemGroup>
     <ClInclude Include="headers\defines.hpp" />
     <ClInclude Include="headers\main-warshall.hpp" />
-    <ClInclude Include="headers\main.hpp" />
+    <ClInclude Include="headers\main-stack.hpp" />
     <ClInclude Include="headers\shapes.hpp" />
     <ClInclude Include="headers\stack.hpp" />
     <ClInclude Include="headers\textbox.hpp" />
@@ -161,6 +163,7 @@
     <Font Include="fonts\Crasns.ttf" />
     <Font Include="fonts\JerseyM54.ttf" />
     <Font Include="fonts\Liberator-Heavy.otf" />
+    <Font Include="fonts\MyriadPro-regular.OTF" />
     <Font Include="fonts\OpenSans-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>

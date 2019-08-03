@@ -13,6 +13,7 @@ struct Button {
 	sf::Text text;
 
 	Button();
+
 	void setString(std::string str);
 };
 

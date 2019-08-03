@@ -1,8 +1,8 @@
-#include "..\headers\main.hpp"
+#include "..\headers\main-stack.hpp"
 
-int main()
+void stack(sf::RenderWindow &window)
 {
-	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Stack");
+	window.setTitle("Stack");
 
 	sf::Sprite buttons[NUMBER_OF_BUTTONS];
 	/*bool buttonsState[NUMBER_OF_BUTTONS];
@@ -54,7 +54,8 @@ int main()
 	myStack.push(5);
 	myStack.push(6);
 
-	while (window.isOpen())
+	bool appState = true;
+	while (appState)
 	{
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -103,7 +104,7 @@ int main()
 					else if (isSpriteClicked(buttons[2], event.mouseButton.x, event.mouseButton.y))
 					{
 						buttons[2].setColor(sf::Color(255, 0, 0, 255));
-						window.close();
+						appState = false;
 						break;
 					}
 					//}
@@ -154,5 +155,4 @@ int main()
 
 	}
 
-	return 0;
 }

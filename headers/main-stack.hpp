@@ -15,3 +15,4 @@
 //#include "..\src\utilities.cpp"
 #include "..\src\textbox.cpp"
 
+void stack(sf::RenderWindow &window);

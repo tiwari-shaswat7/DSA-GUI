@@ -36,12 +36,15 @@
     <ClCompile Include="src\warshall-input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main-stack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\stack.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="headers\main.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="headers\defines.hpp">
@@ -65,6 +68,9 @@
     <ClInclude Include="headers\warshall-input.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="headers\main-stack.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="fonts\arial.ttf" />
@@ -74,6 +80,7 @@
     <Font Include="fonts\JerseyM54.ttf" />
     <Font Include="fonts\CNFREEBD.ttf" />
     <Font Include="fonts\CNFREE__.ttf" />
+    <Font Include="fonts\MyriadPro-regular.OTF" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\button-quit-inactive.png">

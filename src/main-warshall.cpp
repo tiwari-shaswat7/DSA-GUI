@@ -14,8 +14,10 @@ void displayMat(std::vector<std::vector<int>> &mat)
 	}
 }
 
-int main()
+void floyd_warshall(sf::RenderWindow &window)
 {
+	window.setTitle("Floyd-Warshall's Algorithm");
+
 	sf::Font font;
 	if (!font.loadFromFile("fonts/Liberator-Heavy.otf"))
 	{
@@ -23,11 +25,6 @@ int main()
 		exit(1);
 	}
 
-
-	sf::ContextSettings settings;
-	settings.antialiasingLevel = 8;
-
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "Warshall Algorithm", sf::Style::Default, settings);
 
 	Warshall warshall(font, &window);
 	warshall.handleEvent();
@@ -50,10 +47,8 @@ int main()
 
 	displayMat(warshall.m_mat);
 
-	
+
 
 	std::cout << "---------------------------" << std::endl;
 	displayMat(warshall.m_mat);
-
-	return 0;
 }

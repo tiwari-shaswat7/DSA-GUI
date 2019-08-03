@@ -6,7 +6,7 @@ Warshall::Warshall(sf::Font &font, sf::RenderWindow *window) : m_mat(1), m_paths
 {
 	m_font = font;
 	m_window = window;
-	m_nodes.push_back(Node(font, 200, 200, 1));
+	m_nodes.push_back(Node(font, 300, 200, 1));
 	m_mat[0].push_back(0);
 	m_paths[0].push_back(Path(m_nodes[0], m_nodes[0], m_font, 0));
 }
@@ -134,7 +134,8 @@ bool Warshall::isBiDirectional(int index1, int index2)
 
 void Warshall::handleEvent()
 {
-	while (m_window->isOpen())
+	bool appState = true;
+	while (appState)
 	{
 		sf::Event event;
 		while (m_window->pollEvent(event))
@@ -142,7 +143,8 @@ void Warshall::handleEvent()
 			switch (event.type)
 			{
 			case sf::Event::Closed:
-				m_window->close();
+				appState = false;
+				//m_window->close();
 				break;
 
 			case sf::Event::MouseButtonPressed:

@@ -5,6 +5,4 @@
 
 #include "warshall-gui.hpp"
 
-// node constructor -> set position
-
-// 
+void floyd_warshall(sf::RenderWindow& window);
