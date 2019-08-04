@@ -29,8 +29,6 @@ struct Warshall
 
 	Warshall(sf::Font &font, sf::RenderWindow *window);
 
-	//std::vector<std::vector<int>> &getMatrix();
-	//void setMatrix(std::vector<std::vector<int>> &mat);
 
 	void calculate();
 	void newNode(sf::Event inEvent);

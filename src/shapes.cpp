@@ -15,7 +15,6 @@ Node::Node(sf::Font& font, int posX, int posY, int index)
 
 	indexText.setFont(font);
 	indexText.setString(std::to_string(index));
-	//indexText.setCharacterSize()
 	indexText.setPosition(circle.getGlobalBounds().left + NODE_RADIUS - indexText.getGlobalBounds().width / 2,
 		circle.getGlobalBounds().top + NODE_RADIUS - indexText.getCharacterSize() / 2 - 5);
 	indexText.setFillColor(sf::Color::Black);

@@ -4,7 +4,6 @@
 #include <string>
 #include "defines.hpp"
 #include "utilities.hpp"
-//#include "warshall-gui.hpp"
 
 struct Warshall;
 
@@ -20,7 +19,6 @@ struct Button {
 class Input
 {
 private:
-	//sf::RectangleShape m_table;
 	Button m_button[BUTTONS];
 	sf::Font font;
 

@@ -236,25 +236,4 @@ void Warshall::draw()
 	}
 
 
-	/*sf::CircleShape circle(30.0f, 3);
-	circle.setFillColor(sf::Color::Yellow);*/
-
-	/*ArrowShape arrow(200);
-	arrow.setFillColor(sf::Color::Transparent);
-	arrow.setOutlineColor(sf::Color::Yellow);
-	arrow.setOutlineThickness(2);
-	arrow.rotate(45);
-	Node node1(font, 500, 500, 1);
-	Node node2(font, 200, 200, 2);
-	Path path1(node1, node2, font, 25);
-	Path path2(node2, node1, font, 139);*/
-	
-
-		/*path1.draw(window);
-		path2.draw(window);
-		node1.draw(window);
-		node2.draw(window);
-		m_window->draw(arrow);*/
-
-	
 }

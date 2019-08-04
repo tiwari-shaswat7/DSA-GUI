@@ -5,11 +5,7 @@ void stack(sf::RenderWindow &window)
 	window.setTitle("Stack");
 
 	sf::Sprite buttons[NUMBER_OF_BUTTONS];
-	/*bool buttonsState[NUMBER_OF_BUTTONS];
-	for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
-	{
-		buttonsState[i] = false;
-	}*/
+	
 	sf::Texture		buttonPush[2],
 					buttonPop[2],
 					buttonQuit[1];
@@ -24,13 +20,6 @@ void stack(sf::RenderWindow &window)
 	buttons[0].setTexture(buttonPush[0]);
 	buttons[1].setTexture(buttonPop[0]);
 	buttons[2].setTexture(buttonQuit[0]);
-
-	/*if (buttonsState[0])
-		buttons[0].setTexture(buttonPush[1]);
-	if (buttonsState[0])
-		buttons[1].setTexture(buttonPop[1]);
-	if (buttonsState[0])
-		buttons[2].setColor(sf::Color::Red);*/
 
 
 	float buttonPositionY = WINDOW_HEIGHT - 1.2 * buttons[0].getGlobalBounds().height;
@@ -48,11 +37,8 @@ void stack(sf::RenderWindow &window)
 		window.draw(buttons[i]);
 
 	Stack <std::string> myStr;
-	Stack <int> myStack;
-	myStr.push("Neymar");
-	myStr.push("Ronaldo");
-	myStack.push(5);
-	myStack.push(6);
+	/*myStr.push("Neymar");
+	myStr.push("Ronaldo");*/
 
 	bool appState = true;
 	while (appState)
@@ -71,18 +57,14 @@ void stack(sf::RenderWindow &window)
 					if (event.key.code == sf::Keyboard::W)
 					{
 						myStr.push("Messi");
-						//myStack.push(4);
 					}
 					else if (event.key.code == sf::Keyboard::S)
 					{
-						//myStack.pop();
 						myStr.pop();
 					}
 					break;
 
 				case sf::Event::MouseButtonPressed:
-					//if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
-					//{
 					std::cout << event.mouseButton.x << ',' << event.mouseButton.y;
 					if (isSpriteClicked(buttons[0], event.mouseButton.x, event.mouseButton.y))
 					{
@@ -107,11 +89,7 @@ void stack(sf::RenderWindow &window)
 						appState = false;
 						break;
 					}
-					//}
-
-				/*case sf::Event::MouseMoved:
-					std::cout << event.mouseMove.x << ", " << event.mouseMove.y << std::endl;
-					break;*/
+					
 
 				default:
 					buttons[0].setTexture(buttonPush[0]);
@@ -137,17 +115,7 @@ void stack(sf::RenderWindow &window)
 			}
 		}
 
-			
-
-
-			//std::cout << myStack.pop() << std::endl;
-			//std::cout << myStack.pop() << std::endl;
-
-			//std::cout << myStack.peek() << std::endl;
-
-
 		window.clear(sf::Color(COLOR_WHITE));
-		//myStack.display(window);
 		for (int i = 0; i < NUMBER_OF_BUTTONS; i++)
 			window.draw(buttons[i]);
 		myStr.draw(window);

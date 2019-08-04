@@ -12,7 +12,6 @@
 #include "textbox.hpp"
 
 #include "..\src\stack.cpp"
-//#include "..\src\utilities.cpp"
 #include "..\src\textbox.cpp"
 
 void stack(sf::RenderWindow &window);

@@ -9,11 +9,6 @@ Stack<T>::Stack() : top(-1)
 template <class T>
 void Stack<T>::push(T inData)
 {
-	/*if (typeid(std::string) == typeid(inData))
-	{
-		if(std::string(inData == "")
-			return;
-	}*/
 
 	if (top == MAX - 1)
 	{

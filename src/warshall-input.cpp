@@ -21,10 +21,8 @@ void Button::setString(std::string str)
 	rect.setPosition(pos);
 
 	text.setString(str);
-	//text.setOrigin(text.getGlobalBounds().width / 2, text.getGlobalBounds().height / 2);
 	text.setPosition(pos.x + (rect.getGlobalBounds().width - text.getGlobalBounds().width) / 2,
 		pos.y + (rect.getGlobalBounds().height - text.getCharacterSize()) / 2);
-	/*text.setPosition(pos);*/
 	
 	count++;
 	pos.y += BUTTON_HEIGHT;
